@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: mercandes-pos-postgres
+    environment:
+      POSTGRES_USER: mercaandes
+      POSTGRES_PASSWORD: mercaandes123
+      POSTGRES_DB: mercaandes_pos
+    ports:
+      - "5432:5432"
+    volumes:
+      - pos_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  pos_postgres_data:
